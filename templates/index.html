@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ChatRoom</title>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js" type="text/javascript">
+
+  </script>
+
+  <link rel="stylesheet" href="static/index.css">
+  <script src="static/index2.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h3 class=" text-center">Mirc ripoff</h3>
+    <div class="messaging">
+      <div class="channels">
+        <div class="headind_srch">
+          <div class="recent_heading">
+            <h4>Channels</h4>
+          </div>
+          <button type="button" class="btn btn-primary" id="createChannel">Create Channel</button>
+        </div>
+        <div id="channelContainer">
+          {% for channel in channelList %}
+          <div class="chat_list" id="{{channel.channelNb}}">
+            <div class="chat_people">
+              <div class="chat_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div>
+              <div class="chat_ib">
+                <h5>{{channel.channelName}}</h5>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="mesages">
+
+
+        <div class="msg_history">
+
+        </div>
+
+
+        <div class="type_msg">
+          <div class="input_msg_write">
+            <input type="text" class="write_msg" placeholder="Type a message" />
+            <button class="msg_send_btn" type="button" id="sendMessage"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+          </div>
+        </div>
+
+
+        <p class="text-center top_spac"> Project made by Iosif Stefan </a></p>
+
+      </div>
+    </div>
+
+</body>
+
+</html>
